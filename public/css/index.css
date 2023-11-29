@@ -1,0 +1,190 @@
+:root {
+    --colorprimario: #239B56    ;
+    --colorsecundario: #0099CC;
+    --colorterciario: #66FF99;
+    --colortraslucido: rgba(255, 255, 255, 0.434);
+
+  }
+
+.fotodomi{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.fotoprincipal{
+    width: 100%;
+    height:max-content;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+.abici {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--colorprimario);
+    margin-left: 20px;
+}
+
+/* Estilos para el contenido principal */
+.hero {
+    background-image: url('../img/AbiciFondo.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--colorprimario);
+    text-align: center;
+    padding: 200px 0;
+    height: 606px;
+    
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+a.bton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--colorprimario);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+a.bton:hover {
+    background-color: var(--colortraslucido); /* Cambia el color de fondo al pasar el mouse */
+    color: var(--colorprimario); 
+}
+
+/* Estilos para los servicios */
+.services {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.services h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.service {
+    display: inline-block;
+    width: 30%;
+    margin: 0 1.5%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    margin: 0 auto;
+}
+
+.service h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 14px;
+}
+
+/* Estilos para la galería de imágenes */
+.gallery {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.gallery h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.restaurant {
+    display: inline-block;
+    width: 30%;
+    margin: 0 1.5%;
+}
+
+.restaurant img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: var(--colortraslucido);
+    color: var(--colorprimario);
+    box-shadow: 4px 4px 6px rgb(3, 221, 32); 
+    text-align: center;
+}   
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+    .service, .restaurant {
+        width: 90%;
+        margin: 0 5%;
+        margin-bottom: 20px;
+    }
+}
+/* Carousel */
+/* Estilo general del carrusel */
+.seccioncarusel{
+    margin-bottom: 10px;
+}
+#carousel {
+    background-color: #000000b3; /* Fondo oscuro */
+}
+
+/* Estilo para las imágenes en el carrusel */
+.carousel-inner img {
+    max-width: 100%; /* Asegura que las imágenes no se desborden del carrusel */
+    border-radius: 10px; /* Bordes redondeados para las imágenes */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra suave para las imágenes */
+    margin-right: 10px;
+}
+
+/* Estilo para los controles de navegación */
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: var(--colorprimario); /* Fondo naranja para los controles */
+    text-decoration: none;
+    border-radius: 50%; /* Bordes redondeados para los botones */
+    width: 50px; /* Ancho de los botones de navegación */
+    height: 50px; /* Altura de los botones de navegación */
+    font-size: 24px; /* Tamaño de fuente de los íconos de flecha */
+    opacity: 0.7; /* Opacidad inicial para los botones */
+    transition: opacity 0.2s ease; /* Transición suave para la opacidad */
+    margin-top: 100px;
+}
+
+/* Estilo para los controles de navegación al pasar el mouse */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1; /* Opacidad completa al pasar el mouse */
+}
+.row{
+    margin-left: 0%;
+    margin-right:0%;
+}
