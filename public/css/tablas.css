@@ -1,0 +1,52 @@
+/* Estilos personalizados para la tabla */
+.table-custom {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .table-custom th,
+  .table-custom td {
+    border: 1.5px solid #66FF99;
+    padding: 8px;
+  }
+  
+  .table-custom th {
+    background-color: #000000a8;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .table-custom tbody tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+  
+  .table-custom tbody tr:hover {
+    background-color: #0000006f;
+    color: #ffffff;
+  }
+
+  .btn-edit {
+  display: inline-block;
+  padding: 2px;
+  margin: 3px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+  color: #fff;
+}
+
+.btn-edit {
+  background-color: #007bff; /* Color azul para botón de editar */
+}
+
+/* Estilos para hover */
+.btn-edit:hover {
+    color: #fff;
+    background-color: #00bf40;
+  opacity: 0.8;
+}
+  

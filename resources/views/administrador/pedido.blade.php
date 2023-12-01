@@ -1,58 +1,99 @@
-
+@extends('layouts.main', ['activePage' => 'pedidos', 'titlePage' => __('Editar Pedido')])
 <link rel="stylesheet" href="{{asset('css/pedidoadmin.css')}}">
-<x-app-layout></x-app-layout>
-<section>
-    @if(session('mensaje'))
-    <div class="alert alert-danger">
-        {{ session('mensaje') }}
-    </div>
-@endif
-    <div>
-        @if(isset($pedido))
-        <!-- Mostrar los datos del pedido -->
-        <h2>Datos del Pedido</h2>
-        <p>Productos: {{ $pedido['productos'] }}</p>
-        <p>Descripción: {{ $pedido['descripcion'] }}</p>
-        <p>Dirección: {{ $pedido['direccion'] }}</p>
-    @endif
-    
-    @if(isset($nombreCompleto) && isset($idUsuario))
-        <h2>Detalles del usuario:</h2>
-        <p>Nombre Completo: {{ $nombreCompleto }}</p>
-        <p>Telefono: {{$telefono}}</p>
-        <p>ID de Usuario: {{ $idUsuario }}</p>
-        <!-- Otros detalles del usuario que desees mostrar -->
-    @else
-        <p>No se han proporcionado detalles del usuario.</p>
-    @endif
-    </div>
-<!-- Otros detalles del usuario que desees mostrar -->
+@section('content')
+<div class="content">
+    <div class="container-fluid">
+        <h2>Editar Pedido</h2>
+        <form method="POST" action="{{ route('pedidos.update', $pedido->IdPedido) }}">
+            @csrf
+            @method('PUT')
 
-    <!-- Agregar un formulario para editar los datos -->
-    <h2>Editar Pedido</h2>
-    <form action="" method="POST">
-        @csrf
-        <!-- Campos del formulario con valores predefinidos -->
-        <input type="hidden" name="productos" value="{{ $pedido['productos'] }}">
-        <input type="hidden" name="descripcion" value="{{ $pedido['descripcion'] }}">
-        <input type="hidden" name="direccion" value="{{ $pedido['direccion'] }}">
-        <input type="hidden" name="idusuario" value="{{$idUsuario}}">
+            <!-- IdPedido -->
+            <input type="hidden" name="IdPedido" value="{{ $pedido->IdPedido }}" hidden>
 
-        <!-- Campos editables -->
-        <div class="mb-3">
-            <label for="tiempoestimado" class="form-label">Tiempo estimado  Min:</label>
-            <input type="number" name="tiempoestimado" id="tiempoestimado" class="form-control" rows="3" placeholder="Tiempo aproximado que tardara el servicio">
-        </div>
-        <div class="mb-3">
-            <label for="horaestimada" class="form-label">Hora Estimada De Entrega:</label>
-            <input type="time" name="horaestimada" id="horaestimada" class="form-control" rows="3" placeholder="Hora aproximada de entrega y finalización del servicio">
-        </div>
-        <select name="domiciliario">
-            <option value="">Asignar Domiciliario</option>
-            @foreach($usuarios as $usuario)
-                <option value="{{ $usuario->id }}" @if($usuario->id == $idUsuario) selected @endif>{{ $usuario->name }} {{ $usuario->apellidos }}</option>
-            @endforeach
-        </select>
-        <button type="submit" class="btn btn-primary">Actualizar Pedido</button>
-    </form>
-</section>
+
+            <!-- idCliente -->
+            <div class="form-group">
+
+                <input type="text" name="idCliente" value="{{$pedido->idCliente}}" hidden>
+                <label for="idCliente">Cliente</label>
+                <select class="form-control" name="idCliente" disabled>
+                    @foreach($usuarios as $usuario)
+                        <option  value="{{ $usuario->id }}" @if($usuario->id == $pedido->idCliente) selected @endif>
+                            {{ $usuario->name }} {{ $usuario->apellidos }}
+                        </option>
+                    @endforeach
+                </select>  
+            </div>
+           
+            <!-- idAdministracion -->
+            <input type="hidden" name="idAdministracion" value="{{ auth()->id() }}">
+
+            <!-- FechaHora -->
+            <input type="hidden" name="FechaHora" value="{{ now() }}">
+
+            <!-- Productos -->
+            <div class="form-group">
+                <label for="Productos">Productos</label>
+                <input type="text" class="form-control" id="Productos" name="Productos" value="{{ $pedido->Productos }}" readonly>
+            </div>
+
+               <!-- DescripcionProductos -->
+               <div class="form-group">
+                <label for="DescripcionProductos">Descripción de Productos</label>
+                <textarea class="form-control" id="DescripcionProductos" name="DescripcionProductos" readonly>{{ $pedido->DescripcionProductos }}</textarea>
+            </div>
+
+              <!-- Direccion -->
+              <div class="form-group">
+                <label for="Direccion">Dirección</label>
+                <input type="text" class="form-control" id="Direccion" name="Direccion" value="{{ $pedido->Direccion }}" readonly>
+            </div>
+
+
+                   <!-- idDomiciliario -->
+                   <div class="form-group">
+                    <label for="idDomiciliario">Domiciliario</label>
+                    <div class="custom-select">
+                        <select class="form-control" id="iddomiciliario" name="iddomiciliario">
+                            <!-- Opciones cargadas dinámicamente desde $usuarios -->
+                            @foreach ($usuarios as $usuario)
+                                <option value="{{ $usuario->id }}">{{ $usuario->name }}</option>
+                            @endforeach
+                        </select>
+                        <span class="arrow"></span> <!-- Flecha para indicar que es un select -->
+                    </div>
+                </div>
+                
+
+            <!-- TiempoEstimadomin -->
+            <div class="form-group">
+                <label for="TiempoEstimadomin">Tiempo Estimado en Minutos</label>
+                <input type="number" class="form-control" id="TiempoEstimadomin" name="TiempoEstimadomin" value="{{ $pedido->TiempoEstimadomin }}">
+            </div>
+
+            <!-- HoraEstimada -->
+            <div class="form-group">
+                <label for="HoraEstimada">Hora Estimada de Entrega</label>
+                <input type="time" class="form-control" id="HoraEstimada" name="HoraEstimada" value="{{ $pedido->HoraEstimada }}">
+            </div>
+
+            <!-- Estado -->
+            <div class="form-group">
+                <label for="estado">Estado</label>
+                <div class="custom-select">
+                    <select class="form-control" id="estado" name="estado">
+                        <option value="en proceso" {{ $pedido->estado == 'en proceso' ? 'selected' : '' }}>En Proceso</option>
+                        <option value="Pendiente" {{ $pedido->estado == 'Pendiente' ? 'selected' : '' }}>Pendiente</option>
+                        <option value="denegado" {{ $pedido->estado == 'denegado' ? 'selected' : '' }}>Denegado</option>
+                    </select>
+                    <span class="arrow"></span> <!-- Flecha para indicar que es un select -->
+                </div>
+            </div>
+            
+
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        </form>
+    </div>
+</div>
+@endsection
