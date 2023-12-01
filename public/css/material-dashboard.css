@@ -9466,7 +9466,7 @@ a.text-dark:focus {
 
 .btn.btn-primary:hover {
   color: #fff;
-  background-color: ##22CA00 ;
+  background-color: #22CA00  ;
   border-color: #701c7e;
 }
 
@@ -9474,7 +9474,7 @@ a.text-dark:focus {
 .btn.btn-primary.focus,
 .btn.btn-primary:hover {
   color: #fff;
-  background-color: ##22CA00 ;
+  background-color: #22CA00  ;
   border-color: #701c7e;
 }
 
@@ -9483,7 +9483,7 @@ a.text-dark:focus {
 .open>.btn.btn-primary.dropdown-toggle,
 .show>.btn.btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: ##22CA00 ;
+  background-color: #22CA00  ;
   border-color: #701c7e;
   box-shadow: 0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12);
 }
@@ -9501,7 +9501,7 @@ a.text-dark:focus {
 .show>.btn.btn-primary.dropdown-toggle:focus,
 .show>.btn.btn-primary.dropdown-toggle.focus {
   color: #fff;
-  background-color: ##22CA00 ;
+  background-color: #22CA00  ;
   border-color: #3f1048;
 }
 
@@ -15885,7 +15885,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 
 .fixed-plugin .btn.btn-primary:hover {
   color: #fff;
-  background-color: ##22CA00 ;
+  background-color: #22CA00  ;
   border-color: #701c7e;
 }
 
@@ -15893,7 +15893,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 .fixed-plugin .btn.btn-primary.focus,
 .fixed-plugin .btn.btn-primary:hover {
   color: #fff;
-  background-color: ##22CA00 ;
+  background-color: #22CA00  ;
   border-color: #701c7e;
 }
 
@@ -15902,7 +15902,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 .open>.fixed-plugin .btn.btn-primary.dropdown-toggle,
 .show>.fixed-plugin .btn.btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: ##22CA00 ;
+  background-color: #22CA00  ;
   border-color: #701c7e;
   box-shadow: 0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12);
 }
@@ -15920,7 +15920,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 .show>.fixed-plugin .btn.btn-primary.dropdown-toggle:focus,
 .show>.fixed-plugin .btn.btn-primary.dropdown-toggle.focus {
   color: #fff;
-  background-color: ##22CA00 ;
+  background-color: #22CA00  ;
   border-color: #3f1048;
 }
 
@@ -15930,7 +15930,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .open>.fixed-plugin .btn.btn-primary.dropdown-toggle.bmd-btn-icon:hover {
-  background-color: ##22CA00 ;
+  background-color: #22CA00  ;
 }
 
 .fixed-plugin .btn.btn-primary.disabled:focus,
@@ -17766,7 +17766,7 @@ label {
 .card .card-footer {
   padding: 0;
   padding-top: 10px;
-  margin: 0 15px 10px;
+  margin: 0 auto;
   border-radius: 0;
   justify-content: space-between;
   align-items: center;
