@@ -159,7 +159,7 @@ sup {
 }
 
 a {
-  color: #66FF99;
+  color: #ffff;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
@@ -580,7 +580,7 @@ sup {
 }
 
 a {
-  color: #66FF99;
+  color: #fffff;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
@@ -9459,9 +9459,10 @@ a.text-dark:focus {
 
 .btn.btn-primary {
   color: #000;
-  background-color: #18ce0f;
+  background-color: #73FF57 ;
   border-color: #10963c;
   box-shadow: 0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12);
+  border-radius: 27px;
 }
 
 .btn.btn-primary:hover {
@@ -17005,7 +17006,7 @@ legend {
 }
 
 a {
-  color: #22CA00 ;
+  color: #fffff ;
 }
 
 a:hover,
@@ -17317,12 +17318,11 @@ label {
 }
 
 .card {
-  border: 0;
   margin-bottom: 30px;
   margin-top: 30px;
-  border-radius: 6px;
+  border-radius: 25%;
   color: #333333;
-  background: #fff;
+  background: #D7DBDD ;
   width: 100%;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }

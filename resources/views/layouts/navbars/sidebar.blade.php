@@ -48,7 +48,7 @@
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'typography' ? ' active' : '' }}">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{route('admin.listclientes')}}">
           <i class="material-icons">person</i>
             <p>{{ __('Clientes') }}</p>
         </a>

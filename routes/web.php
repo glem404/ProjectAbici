@@ -55,6 +55,8 @@ Route::post('pedido/guardar',[App\Http\Controllers\PedidosController::class,'gua
 Route::get('administrador/listpedidos',[App\Http\Controllers\AdminController::class,'indexpedidos'])->name('admin.listpedidos');
 Route::get('pedidos/{id}/editar',[App\Http\Controllers\AdminController::class,'edit'])->name('pedidos.edit');
 Route::put('pedidos/{id}/actualizar',[App\Http\Controllers\AdminController::class,'update'])->name('pedidos.update');
+Route::get('administrador/listclientes',[App\Http\Controllers\AdminController::class,'indexclientes'])->name('admin.listclientes');
+
 
 
 

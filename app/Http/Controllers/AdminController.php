@@ -30,12 +30,12 @@ class AdminController extends Controller
         
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function indexclientes()
     {
         //
+        $usuarios = User::all();
+
+        return view('administrador/listclientes' , ['usuarios' => $usuarios]);
     }
 
     /**
