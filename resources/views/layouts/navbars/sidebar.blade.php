@@ -54,7 +54,7 @@
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'icons' ? ' active' : '' }}">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{route('admin.bicicletas')}}">
           <i class="material-icons">two_wheeler</i>
           <p>{{ __('Bicicletas') }}</p>
         </a>

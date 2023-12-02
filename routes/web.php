@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PedidosController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BusquedasController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -56,7 +58,10 @@ Route::get('administrador/listpedidos',[App\Http\Controllers\AdminController::cl
 Route::get('pedidos/{id}/editar',[App\Http\Controllers\AdminController::class,'edit'])->name('pedidos.edit');
 Route::put('pedidos/{id}/actualizar',[App\Http\Controllers\AdminController::class,'update'])->name('pedidos.update');
 Route::get('administrador/listclientes',[App\Http\Controllers\AdminController::class,'indexclientes'])->name('admin.listclientes');
+Route::get('administrador/bicicletas',[App\Http\Controllers\AdminController::class,'indexbicicletas'])->name('admin.bicicletas');
 
+/* Rutas Barras de Busqueda  */ 
+Route::get('administrador/buscarCli', [App\Http\Controllers\BusquedasController::class, 'searchCli'])->name('admin.searchcli');
 
 
 

@@ -7,7 +7,8 @@ use App\Models\pedidos;
 use App\Models\User; 
 use Illuminate\Support\Facades\Auth;
 use App\Models\facturas; 
-use App\Models\detallefactura; 
+use App\Models\detallefactura;
+use App\Models\Bicicletas;
 use DB;
 
 class AdminController extends Controller
@@ -24,8 +25,14 @@ class AdminController extends Controller
         ->orderBy(DB::raw("(CASE WHEN pedidos.estado = 'pendiente' THEN 0 ELSE 1 END)"))
         ->get();
 
+    $todosLosPedidos = Pedidos::all();
+    $pedidosPendientes = Pedidos::where('estado', 'pendiente')->get();
+    $pedidosEnProceso = Pedidos::where('estado', 'en proceso')->get();
+    $pedidosDenegados = Pedidos::where('estado', 'denegado')->get();
+    $pedidosFinalizados = Pedidos::where('estado', 'finalizado')->get();
+
      
-       return view('administrador/listpedidos' , ['pedidos' => $pedidos]);
+    return view('administrador/listpedidos', compact('todosLosPedidos', 'pedidosPendientes', 'pedidosEnProceso', 'pedidosDenegados', 'pedidosFinalizados','pedidos'));
    
         
     }
@@ -33,9 +40,16 @@ class AdminController extends Controller
     public function indexclientes()
     {
         //
-        $usuarios = User::all();
+        $usuarios = User::orderBy('name', 'asc')->get();
 
         return view('administrador/listclientes' , ['usuarios' => $usuarios]);
+    }
+
+    public function indexbicicletas()
+    {
+        //  
+        $bicicletas = Bicicletas::all();
+        return view('administrador/bicicletas', ['bicicletas' => $bicicletas]);
     }
 
     /**
